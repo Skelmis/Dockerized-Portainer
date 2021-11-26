@@ -5,6 +5,7 @@ services:
     container_name: traefik
     image: "traefik:v2.5.4"
     command:
+      - "--api=true"
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --providers.docker
