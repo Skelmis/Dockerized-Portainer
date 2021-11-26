@@ -3,7 +3,7 @@ version: "3.3"
 services:
   traefik:
     container_name: traefik
-    image: "traefik:v2.2.8"
+    image: "traefik:v2.5.4"
     command:
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
