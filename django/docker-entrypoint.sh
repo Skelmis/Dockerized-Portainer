@@ -7,4 +7,4 @@ tail -n 0 -f /var/log/gunicorn*.log &
 
 python manage.py makemigrations
 python manage.py migrate
-exec gunicorn arcane.wsgi:application -c gunicorn.conf.py
+exec gunicorn (named dir).wsgi:application -c gunicorn.conf.py
