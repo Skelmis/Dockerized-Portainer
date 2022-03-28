@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/nginx/vhost.d
+      - /etc/nginx/certs
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - proxy
+
+  ssl-generator:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - proxy
+
+  portainer:
+    image: portainer/portainer-ce:2.11.0
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    environment:
+      - VIRTUAL_HOST={url}
+      - VIRTUAL_PORT=9000
+      - LETSENCRYPT_HOST={url}
+    networks:
+      - proxy
+
+volumes:
+  portainer_data:
+
+networks:
+  proxy:
