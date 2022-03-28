@@ -10,7 +10,7 @@ services:
     volumes:
       - hosts:/etc/nginx/vhost.d
       - certs:/etc/nginx/certs
-      - /usr/share/nginx/html
+      - html:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   ssl-generator:
@@ -37,3 +37,4 @@ volumes:
   portainer_data:
   certs:
   hosts:
+  html:
