@@ -8,8 +8,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /etc/nginx/vhost.d
-      - /etc/nginx/certs
+      - hosts:/etc/nginx/vhost.d
+      - certs:/etc/nginx/certs
       - /usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
@@ -22,7 +22,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   portainer:
-    image: portainer/portainer-ce:2.11.0
+    image: portainer/portainer-ce:2.11.1
     command: -H unix:///var/run/docker.sock
     restart: always
     volumes:
@@ -35,3 +35,5 @@ services:
 
 volumes:
   portainer_data:
+  certs:
+  hosts:
