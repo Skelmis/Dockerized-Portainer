@@ -25,8 +25,6 @@ If using `traefik`:
 - Replace `portainer.yourdomain.com` with your domain
 - Replace `See Readme` with the output of the below command
 
-To generate your own thing for the Traefik dashboard on line 34
-use the following:
 ```shell
 > sudo apt install apache2-utils
 > echo $(htpasswd -nb <username> <password>) | sed -e s/\\$/\\$\\$/g
