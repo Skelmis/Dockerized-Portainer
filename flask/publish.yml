@@ -16,6 +16,6 @@ jobs:
             username: ${{ github.actor }}
             password: ${{ github.token }}
             registry: docker.pkg.github.com
-            repository: skelmis/document-redirect/site
+            repository: skelmis/<repo>/<name>
             tags: latest
             build_args: BRANCH=${{ github.ref }},COMMIT=${{ github.sha }}
