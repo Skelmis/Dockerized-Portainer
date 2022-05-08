@@ -24,6 +24,10 @@ If using `traefik`:
 - Replace `traefik.yourdomain.com` with your domain
 - Replace `portainer.yourdomain.com` with your domain
 - Replace `See Readme` with the output of the below command
+- Run the following in the `traefik` directory
+```shell
+> chmod 600 ./acme.json
+```
 
 ```shell
 > sudo apt install apache2-utils
