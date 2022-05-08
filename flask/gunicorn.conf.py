@@ -6,7 +6,7 @@ loglevel = "info"
 accesslog = "/var/log/gunicorn.access.log"
 errorlog = "/var/log/gunicorn.error.log"
 
-proc_name = "Document redirect"
+proc_name = "name here"
 
 worker_tmp_dir = "/dev/shm"
 
