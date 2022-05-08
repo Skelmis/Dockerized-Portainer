@@ -3,7 +3,7 @@ version: "3.3"
 services:
   traefik:
     container_name: traefik
-    image: "traefik:v2.5.4"
+    image: "traefik:v2.6.1"
     restart: always
     command:
       - "--api=true"
