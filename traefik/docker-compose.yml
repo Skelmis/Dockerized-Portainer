@@ -36,7 +36,7 @@ services:
       - "traefik.http.middlewares.admin.basicauth.users=See readme"
 
   portainer:
-    image: portainer/portainer-ce:2.13.1
+    image: portainer/portainer-ce:2.14.2
     command: -H unix:///var/run/docker.sock
     restart: always
     volumes:
