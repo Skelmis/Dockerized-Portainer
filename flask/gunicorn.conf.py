@@ -5,6 +5,7 @@ loglevel = "info"
 
 accesslog = "-"
 errorlog = "-"
+access_log_format = '%(t)s %({X-Forwarded-For}i)s "%(r)s" %(s)s'
 
 proc_name = "name here"
 
