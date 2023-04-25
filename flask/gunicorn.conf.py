@@ -3,8 +3,8 @@ import multiprocessing
 capture_output = True
 loglevel = "info"
 
-accesslog = "/var/log/gunicorn.access.log"
-errorlog = "/var/log/gunicorn.error.log"
+accesslog = "-"
+errorlog = "-"
 
 proc_name = "name here"
 
