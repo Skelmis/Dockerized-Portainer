@@ -3,8 +3,9 @@ import multiprocessing
 capture_output = True
 loglevel = "info"
 
-accesslog = "/var/log/gunicorn.access.log"
-errorlog = "/var/log/gunicorn.error.log"
+accesslog = "-"
+errorlog = "-"
+access_log_format = '%(t)s %({X-Forwarded-For}i)s "%(r)s" %(s)s'
 
 proc_name = "(( Name here lol, gunicorn.conf.py ))"
 
