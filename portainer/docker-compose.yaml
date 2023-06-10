@@ -3,7 +3,7 @@ services:
 
   portainer:
     image: portainer/portainer-ce:2.18.2
-    container_name: "portainer.skelmis.co.nz"
+    container_name: "portainer"
     privileged: true
     volumes:
       - './data:/data'
